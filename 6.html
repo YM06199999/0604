@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>購物車練習</title>
+  <style>
+    body {
+      background-color: #ecd9a5; 
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    img {
+      width: 200px;
+      height: auto;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .product {
+      margin-bottom: 20px;
+    }
+
+    button {
+      margin-left: 10px;
+      padding: 6px 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>購物車總額: $<span id="total">0</span></h2>
+  <button onclick="clearCart()">清空購物車</button>
+
+  <div class="product">
+    <img src="245563136_959042634677927_6829505635794598055_n.jpg" alt="商品1">
+    <p>185元</p>
+    <button onclick="priceadd()">加入購物車</button>
+  </div>
+
+  <div class="product">
+    <img src="caption.jpg" alt="商品2">
+    <p>250元</p>
+    <button onclick="priceadd2()">加入購物車</button>
+  </div>
+
+  <script>
+    let totalprice = 0;
+
+    function priceadd() {
+      totalprice += 185;
+      localStorage.setItem("price", totalprice);
+      document.getElementById("total").textContent = totalprice;
+      console.log(localStorage.getItem("price"));
+    }
+
+    function priceadd2() {
+      totalprice += 250;
+      localStorage.setItem("price", totalprice);
+      document.getElementById("total").textContent = totalprice;
+      console.log(localStorage.getItem("price"));
+    }
+
+    function clearCart() {
+      totalprice = 0;
+      localStorage.setItem("price", totalprice);
+      document.getElementById("total").textContent = totalprice;
+      console.log(localStorage.getItem("price"));
+    }
+  </script>
+
+</body>
+</html>
